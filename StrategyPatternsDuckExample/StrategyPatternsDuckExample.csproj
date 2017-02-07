@@ -40,19 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DecoyDuck.cs" />
-    <Compile Include="Duck.cs" />
+    <Compile Include="Ducks\DecoyDuck.cs" />
+    <Compile Include="Ducks\Duck.cs" />
     <Compile Include="Interfaces\FlyBehavior.cs" />
-    <Compile Include="FlyNoWay.cs" />
-    <Compile Include="FlyWithWings.cs" />
-    <Compile Include="MallardDuck.cs" />
-    <Compile Include="ModelDuck.cs" />
-    <Compile Include="MuteQuack.cs" />
+    <Compile Include="SpecificFlyBehaviors\FlyNoWay.cs" />
+    <Compile Include="SpecificFlyBehaviors\FlyWithWings.cs" />
+    <Compile Include="Ducks\MallardDuck.cs" />
+    <Compile Include="Ducks\ModelDuck.cs" />
+    <Compile Include="Ducks\MuteQuack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quack.cs" />
+    <Compile Include="SpecificQuackBehaviors\Quack.cs" />
     <Compile Include="Interfaces\QuackBehavior.cs" />
-    <Compile Include="RubberDuck.cs" />
-    <Compile Include="Squeak.cs" />
+    <Compile Include="Ducks\RubberDuck.cs" />
+    <Compile Include="SpecificQuackBehaviors\Squeak.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

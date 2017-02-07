@@ -25,40 +25,63 @@ namespace HeadFirstDesignPatterns
     {
         static void Main(string[] args)
         {
-            ////Strategy pattern
-            //Duck ModelDuck = new ModelDuck();
+            //// Strategy pattern
+            //StrategyPatternsDuckExample.Duck ModelDuck = new ModelDuck();
+            //// Model duck has certain inherent fly and quack behavior, which may be different from a rubber duck
             //ModelDuck.PerformFly();
+
+            //// We can even set its fly, quack behavior during runtime, more flexible approach
             //ModelDuck.SetFlyBehavior(new FlyNoWay());
             //ModelDuck.PerformFly();
             //Console.Read();
 
-            ////Observer pattern
+            //// Observer pattern
+
+            //// This is the "subject"
             //WeatherData WD = new WeatherData();
-            //CurrentConditions CurrentDisplay =
-            //new CurrentConditions(WD);
+            //Console.ForegroundColor = ConsoleColor.White;
+            //// This is an observer (subscriber) to the subject
+            //CurrentConditions CurrentDisplay = new CurrentConditions(WD);
+
+            //// This is an observer (subscriber) to the subject
             //WeatherStatistics StatisticsDisplay = new WeatherStatistics(WD);
+
+            //// This is an observer (subscriber) to the subject
             //WeatherForecast forecastDisplay = new WeatherForecast(WD);
+
+            //// This is an observer (subscriber) to the subject
             //HeatIndex HiDisplay = new HeatIndex(WD);
+
+            //// All the observers' update methods will be called
             //WD.SetMeasurements(80, 65, 30.4f);
             //WD.SetMeasurements(82, 70, 29.2f);
             //WD.SetMeasurements(78, 90, 29.2f);
+
+            //// Can remove an observer as well
+            //WD.RemoveObserver(CurrentDisplay);
+
+            //// Now everyone except the above is notified
+            //WD.SetMeasurements(10, 15, 10.4f);
             //Console.Read();
 
 
-            ////Decorator Patterns
-            ////Only house blend!
-            //Beverage BB = new Houseblend();
-            //Console.WriteLine(BB.GetDescription());
-            //Console.WriteLine(BB.Cost());
-            ////Now add mocha to the house blend - 
-            ////the statment Beverage Mocha = new Mocha(BB); and BB = new Mocha(BB); are equivalent
-            ////However, in the below one we are explicitly making a new Mocha object
-            ////In the one further below, we are "adding" Mocha to the existing object BB
-            ////Beverage Mocha = new Mocha(BB);
-            //BB = new Mocha(BB);
-            //Console.WriteLine(BB.GetDescription());
-            //Console.WriteLine(BB.Cost());
-            //Console.Read();
+            //Decorator Patterns
+            //Only house blend!
+            Beverage BB = new Houseblend();
+            Console.WriteLine(BB.GetDescription());
+            Console.WriteLine(BB.Cost());
+            //Now add mocha to the house blend - 
+            //the statment Beverage Mocha = new Mocha(BB); and BB = new Mocha(BB); are equivalent
+            //However, in the below one we are explicitly making a new Mocha object
+            //In the one further below, we are "adding" Mocha to the existing object BB
+            //Beverage Mocha = new Mocha(BB);
+            BB = new Mocha(BB);
+            Console.WriteLine(BB.GetDescription());
+            Console.WriteLine(BB.Cost());
+            BB = new Whip(BB);
+            Console.WriteLine(BB.GetDescription());
+            Console.WriteLine(BB.Cost());
+            Console.Read();
 
             ////Factory Pattern
             //PizzaStore KoronetsNYStore = new NYPizzaStore();
@@ -67,7 +90,7 @@ namespace HeadFirstDesignPatterns
             //KoronetsNYStore.OrderPizza("Cheese");
             //KoronetsChicagoStore.OrderPizza("Cheese");
 
-            ////Order Cheese pizzas at the 2 stores
+            ////Order Veggie pizzas at the 2 stores
             //KoronetsNYStore.OrderPizza("Veggie");
             //KoronetsChicagoStore.OrderPizza("Veggie");
             //Console.Read();

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ObserverPatternWeatherDataExample
 {
-    public class WeatherForecast : InterfaceDisplay, InterfaceObserver
+    public class WeatherStatistics : InterfaceDisplay, InterfaceObserver
     {
         private float Temp { get; set; }
         private float Humidity { get; set; }
         private float Pressure { get; set; }
         private InterfaceSubject Subject { get; set; }
-        public WeatherForecast(InterfaceSubject WeatherDataSubject)
+        public WeatherStatistics(InterfaceSubject WeatherDataSubject)
         {
             this.Subject = WeatherDataSubject;
             WeatherDataSubject.RegisterObserver(this);
@@ -21,10 +21,12 @@ namespace ObserverPatternWeatherDataExample
 
         public void Display()
         {
-            Console.WriteLine("Display WeatherForecast!");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Display WeatherStatistics!");
             Console.WriteLine(Temp);
             Console.WriteLine(Humidity);
             Console.WriteLine(Pressure);
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public void Update(float temp, float humidity, float pressure)
@@ -32,7 +34,7 @@ namespace ObserverPatternWeatherDataExample
             Temp = temp;
             Humidity = humidity;
             Pressure = pressure;
-            Console.WriteLine("Update for WeatherForecast reached");
+            Console.WriteLine("Update for WeatherStatistics reached");
             Display();
         }
     }

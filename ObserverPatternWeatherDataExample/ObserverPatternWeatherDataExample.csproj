@@ -40,14 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Different Displays\CurrentConditions.cs" />
-    <Compile Include="Different Displays\HeatIndex.cs" />
+    <Compile Include="DifferentDisplays\CurrentConditions.cs" />
+    <Compile Include="DifferentDisplays\HeatIndex.cs" />
     <Compile Include="Interfaces\InterfaceDisplay.cs" />
     <Compile Include="Interfaces\InterfaceSubject.cs" />
     <Compile Include="Interfaces\InterfaceObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Different Displays\WeatherForecast.cs" />
-    <Compile Include="Different Displays\WeatherStatistics.cs" />
+    <Compile Include="DifferentDisplays\WeatherForecast.cs" />
+    <Compile Include="DifferentDisplays\WeatherStatistics.cs" />
     <Compile Include="WeatherData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
